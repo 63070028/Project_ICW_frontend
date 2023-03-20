@@ -1,22 +1,41 @@
 <template>
-  <div class="home">
 
-    <div class="columns ml-6 mt-6" style="height: 40%;">
-      <div class="column has-background-dark is-3">1</div>
-      <div class="column ml-6 has-background-light is-8">2</div>
+    <div class="columns ml-6 mt-6 pl-3 pr-3">
+      <div class="column has-background-dark is-2 mr-6 has-text-white box">
+        <p class="is-size-1 has-text-centered">Contact</p>
+      </div>
+      <div class="column is-9 ml-3 mr-3 ">
+        <Carousel :autoplay="2000" :wrapAround="true">
+        <Slide v-for="slide in 10" :key="slide">
+          <img class="carousel__item" src="https://www.w3schools.com/w3images/workbench.jpg" >
+        </Slide>
+        <template #addons>
+          <Navigation />
+          <Pagination />
+        </template>
+      </Carousel>
+      </div>
     </div>
+
     <paginationItems :items="states.jobs"></paginationItems>
-  </div>
+    
 </template>
+
 
 <script lang="ts">
 import { defineComponent, reactive } from 'vue'
 import paginationItems from '../components/pagination-items.vue'
 import Job from '@/models/Job'
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 export default defineComponent({
   components: {
-    paginationItems
+    paginationItems,
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
   },
   setup() {
     const states = reactive<{ jobs: Job[] }>({
@@ -44,18 +63,37 @@ export default defineComponent({
       ]
     });
 
-    const deleteJob = (index:number) => {
+    const deleteJob = (index: number) => {
       console.log(index)
       states.jobs.splice(index, 1);
     };
 
-    return { states, deleteJob}
+    return { states, deleteJob }
   },
 })
 </script>
 
 <style scoped>
-@import '../assets/styles/home.css';
+@import '../assets/styles/homepage.css';
+
+.carousel__item {
+  width: 100%;
+  border-radius: 8px;
+  display:  block;;
+  border-radius: 15px;
+}
+
+
+.carousel__prev,
+.carousel__next {
+  box-sizing: content-box;
+  border: 5px solid white;
+}
+
+.box{
+  border-radius: 15px;
+}
+
 </style>
 
 

@@ -1,7 +1,7 @@
 <template>
-    <div class="jobs_content">
+    <div class="jobs_content p-3">
         <div class="columns is-multiline">
-            <div class="column is-2 ml-6 mt-3" v-for="item, index in states.addBlogsPageList" :key="index">
+            <div class="column is-2 ml-6  mt-3" v-for="item, index in states.addBlogsPageList" :key="index">
                 <!-- <button class="button" @click="deleteItem(index)">Del</button> -->
                 <div class="card">
                     <div class="card-content">
@@ -19,11 +19,12 @@
                 </div>
             </div>
         </div>
+        
     </div>
 
 
 
-    <nav class="pagination m-6 is-medium " role="navigation" aria-label="pagination">
+    <nav class="pagination m-6  pl-6 pr-6 is-medium " role="navigation" aria-label="pagination">
         <button class="pagination-previous" :disabled="previousClicked" @click="getPreviousPage()">Previous</button>
         <button class="pagination-next" :disabled="nextPageClicked" @click="getNextPage()">Next page</button>
         <ul class="pagination-list">
@@ -33,6 +34,7 @@
 
         </ul>
     </nav>
+
 </template>
 
 
