@@ -21,6 +21,21 @@ const routes: Array<RouteRecordRaw> = [
     path: '/signin',
     name: 'Signin',
     component: () => import(/* webpackChunkName: "about" */ '../views/SignIn.vue')
+  },
+  {
+    path: '/company',
+    name: 'CompanyProfile',
+    component: () => import(/* webpackChunkName: "about" */ '../views/CompanyProfile.vue')
+  },
+  {
+    path: '/companyJob',
+    name: 'CompanyJob',
+    component: () => import(/* webpackChunkName: "about" */ '../views/CompanyJob.vue')
+  },
+  {
+    path: '/companyProgram',
+    name: 'CompanyProgram',
+    component: () => import(/* webpackChunkName: "about" */ '../views/CompanyProgram.vue')
   }
 ]
 
