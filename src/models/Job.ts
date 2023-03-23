@@ -1,5 +1,6 @@
 export default interface Job {
     id:number,
+    company_id?:number,
     name:string,
     salary_per_day:number,
     location:string,

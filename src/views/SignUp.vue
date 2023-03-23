@@ -1,14 +1,22 @@
 <template>
-    <div class="columns select-role">
-        <div class="column has-background-light p-1 role" @click="() => { select_role = 'applicant'; }">
-            <p class="has-text-centered p-5">หางาน</p>
+   
+    <h1 class="is-size-1 has-text-centered mt-6">Sign Up</h1>
+    <div class="signup_content p-6">
+        <div class="columns select-role">
+            <button
+                :class="['column', 'button', 'is-dark', 'p-1', 'is-size-4', select_role === 'company' ? 'is-outlined' : '']"
+                @click="siwtchApplicant()">
+                หางาน
+            </button>
+            <button
+                :class="['column', 'button', 'is-dark', 'p-1', 'is-size-4', select_role === 'applicant' ? 'is-outlined' : '']"
+                @click="siwtchCompany()">
+                หาคน
+            </button>
         </div>
-        <div class="column has-background-light p-1" @click="() => { select_role = 'company'; }">
-            <p class="has-text-centered p-5">หาคน</p>
-        </div>
-    </div>
         <applicantSignupVue v-if="select_role === 'applicant'"></applicantSignupVue>
         <companySignupVue v-if="select_role === 'company'"></companySignupVue>
+    </div>
 </template>
 
 
@@ -28,7 +36,12 @@ export default {
     },
 
     methods: {
-
+        siwtchApplicant() {
+            this.select_role = "applicant";
+        },
+        siwtchCompany(){
+            this.select_role = "company";
+        }
     }
 
 
@@ -36,6 +49,4 @@ export default {
 }
 </script>
 
-<style scoped>
-@import '../assets/styles/signup.css';
-</style>
+<style scoped>@import '../assets/styles/signup.css';</style>

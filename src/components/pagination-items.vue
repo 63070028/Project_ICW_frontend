@@ -1,5 +1,5 @@
 <template>
-    <div class="jobs_content p-3">
+    <div class="Companys_content p-3">
         <div class="columns is-multiline">
             <div class="column is-2 ml-6  mt-3" v-for="item, index in states.addBlogsPageList" :key="index">
                 <!-- <button class="button" @click="deleteItem(index)">Del</button> -->
@@ -41,12 +41,12 @@
 <script lang="ts">
 import { defineComponent, onMounted, reactive, ref, onUpdated } from 'vue'
 import type { PropType } from 'vue'
-import Job from '@/models/Job';
+import Company from '@/models/Company';
 
 export default defineComponent({
     props: {
         items: {
-            type: Object as PropType<Job[]>,
+            type: Object as PropType<Company[]>,
             required: true
         },
         itemPerEachPage: {
@@ -59,14 +59,14 @@ export default defineComponent({
 
         let presentPage = ref<number>(1);
         let pastPage = ref<number>(1);
-        const states = reactive<{ countOfPages: number[], addBlogsPageList: Job[] }>(
+        const states = reactive<{ countOfPages: number[], addBlogsPageList: Company[] }>(
             {
                 countOfPages: [],
                 addBlogsPageList: [],
             }
         )
         // let countOfPages = reactive<number[]>([]);
-        // let addBlogsPageList = reactive<Job[]>([]);
+        // let addBlogsPageList = reactive<Company[]>([]);
         const nextPageClicked = ref<boolean>(false);
         const previousClicked = ref<boolean>(false);
 
@@ -132,7 +132,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.jobs_content {
+.Companys_content {
     background-color: white;
 }
 

@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <paginationItems :items="states.jobs"></paginationItems>
+    <paginationItems :items="states.companies"></paginationItems>
     
 </template>
 
@@ -26,6 +26,7 @@
 import { defineComponent, reactive } from 'vue'
 import paginationItems from '../components/pagination-items.vue'
 import Job from '@/models/Job'
+import Company from '@/models/Company'
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
@@ -38,37 +39,37 @@ export default defineComponent({
     Navigation,
   },
   setup() {
-    const states = reactive<{ jobs: Job[] }>({
-      jobs: [
-        { id: 1, name: "Job1", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 2, name: "Job2", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 3, name: "Job3", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 4, name: "Job4", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 5, name: "Job5", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 6, name: "Job6", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 7, name: "Job7", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 8, name: "Job8", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 9, name: "Job9", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 10, name: "Job10", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 11, name: "Job11", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 12, name: "Job12", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 13, name: "Job13", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 14, name: "Job14", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 15, name: "Job15", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 16, name: "Job16", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 17, name: "Job17", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 18, name: "Job18", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 19, name: "Job19", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
-        { id: 20, name: "Job20", salary_per_day: 500, location: "xxxx", capacity: 2, detail: "xxxxxxxxxx", qualifications: ["1111", "2222"], contact: { name: "chanapon", email: "xxx@gmail.com", phone: "08xxxxxxxx" } },
+    const states = reactive<{ companies: Company[] }>({
+      companies: [
+        { id: 1, name: "Company1", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 2, name: "Company2", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 3, name: "Company3", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 4, name: "Company4", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 5, name: "Company5", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 6, name: "Company6", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 7, name: "Company7", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 8, name: "Company8", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 9, name: "Company9", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 10, name: "Company10", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 11, name: "Company11", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 12, name: "Company12", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 13, name: "Company13", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 14, name: "Company14", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 15, name: "Company15", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 16, name: "Company16", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 17, name: "Company17", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 18, name: "Company18", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 19, name: "Company19", company_description:"", profile_image:"", background_image:"", vdo:"" },
+        { id: 20, name: "Company20", company_description:"", profile_image:"", background_image:"", vdo:"" },
       ]
     });
 
-    const deleteJob = (index: number) => {
+    const deleteCompany = (index: number) => {
       console.log(index)
-      states.jobs.splice(index, 1);
+      states.companies.splice(index, 1);
     };
 
-    return { states, deleteJob }
+    return { states, deleteCompany }
   },
 })
 </script>

@@ -1,14 +1,12 @@
 <template>
-        <div class="signup_content p-6">
-        <h1 class="is-size-1 has-text-centered">Sign Up</h1>
         <div class="field">
-            <label class="label is-size-4">First Name</label>
+            <label class="label is-size-4">Company Name</label>
             <div class="control">
-                <input :class="['input', v$.firstName.$errors.length ? 'is-danger' : '']" type="text"
-                    v-model="v$.firstName.$model">
+                <input :class="['input', v$.companyName.$errors.length ? 'is-danger' : '']" type="text"
+                    v-model="v$.companyName.$model">
             </div>
-            <!-- <div class="has-text-danger" v-if="v$.firstName.$error">Field is required.</div> -->
-            <div class="has-text-danger" v-for="error of v$.firstName.$errors" :key="error.$uid">
+            <!-- <div class="has-text-danger" v-if="v$.companyName.$error">Field is required.</div> -->
+            <div class="has-text-danger" v-for="error of v$.companyName.$errors" :key="error.$uid">
                 <div class="error-msg">{{ error.$message }}</div>
             </div>
         </div>
@@ -50,9 +48,6 @@
                 <button class="button is-success is-large is-fullwidth" @click="submitForm">Submit</button>
             </div>
         </div>
-
-    </div>
-
 </template>
 
 
@@ -73,7 +68,7 @@ setup() {
 },
 data() {
     return {
-        firstName: "",
+        companyName: "",
         email: "",
         password: "",
         confirmPassword: "",
@@ -81,7 +76,7 @@ data() {
 },
 validations() {
     return {
-        firstName: {
+        companyName: {
             required,
             alpha: helpers.withMessage('This is alpha', alpha)
         },
@@ -101,21 +96,21 @@ validations() {
 },
 methods: {
     async submitForm() {
-        //     const isFormCorrect = await this.v$.$validate()
-        //     if (!isFormCorrect) return
-        //     // let data = {
-        //     //     firstName: this.firstName,
-        //     //     lastName: this.lastName,
-        //     //     email: this.email,
-        //     //     password: this.password,
-        //     // }
-        //     // console.log(data)
+            const isFormCorrect = await this.v$.$validate()
+            if (!isFormCorrect) return
+            let data = {
+                companyName: this.companyName,
+                email: this.email,
+                password: this.password,
+                role:"company"
+            }
+            console.log(data)
 
-        //     const res = await axios.post('http://localhost:3003/signup', data, {
-        //         headers: { "Access-Control-Allow-Origin": "*" }
-        //     });
+            // const res = await axios.post('http://localhost:3003/signup', data, {
+            //     headers: { "Access-Control-Allow-Origin": "*" }
+            // });
 
-        //     console.log(res)
+            // console.log(res)
     }
 }
 

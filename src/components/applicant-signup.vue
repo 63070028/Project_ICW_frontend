@@ -1,6 +1,4 @@
 <template>
-    <div class="signup_content p-6">
-        <h1 class="is-size-1 has-text-centered">Sign Up</h1>
         <div class="field">
             <label class="label is-size-4">First Name</label>
             <div class="control">
@@ -61,8 +59,6 @@
                 <button class="button is-success is-large is-fullwidth" @click="submitForm">Submit</button>
             </div>
         </div>
-
-    </div>
 </template>
 
 
@@ -116,21 +112,22 @@ export default {
     },
     methods: {
         async submitForm() {
-            //     const isFormCorrect = await this.v$.$validate()
-            //     if (!isFormCorrect) return
-            //     // let data = {
-            //     //     firstName: this.firstName,
-            //     //     lastName: this.lastName,
-            //     //     email: this.email,
-            //     //     password: this.password,
-            //     // }
-            //     // console.log(data)
+                const isFormCorrect = await this.v$.$validate()
+                if (!isFormCorrect) return
+                let data = {
+                    firstName: this.firstName,
+                    lastName: this.lastName,
+                    email: this.email,
+                    password: this.password,
+                    role:"applicant"
+                }
+                console.log(data)
 
-            //     const res = await axios.post('http://localhost:3003/signup', data, {
-            //         headers: { "Access-Control-Allow-Origin": "*" }
-            //     });
+                // const res = await axios.post('http://localhost:3003/signup', data, {
+                //     headers: { "Access-Control-Allow-Origin": "*" }
+                // });
 
-            //     console.log(res)
+                // console.log(res)
         }
     }
 
