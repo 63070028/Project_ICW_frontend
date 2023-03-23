@@ -1,16 +1,18 @@
 <template>
 
     <div class="columns ml-6 mt-6 pl-3 pr-3">
-      <div class="column has-background-dark is-2 mr-6 has-text-white box">
+
+      <div class="column has-background-dark is-2 mr-6 has-text-white box" @click="viewContact()" style="cursor: pointer;">
         <p class="is-size-1 has-text-centered">Contact</p>
       </div>
-      <div class="column is-9 ml-3 mr-3 ">
-        <Carousel :autoplay="2000" :wrapAround="true">
+
+      <div class="column is-10 ml-3 mr-3 ">
+        <Carousel :autoplay="1500" :wrapAround="true" style="width: 90%;">
         <Slide v-for="slide in 10" :key="slide">
-          <img class="carousel__item" src="https://www.w3schools.com/w3images/workbench.jpg" >
+          <img @click="viewProgram()" class="carousel__item" src="https://www.w3schools.com/w3images/workbench.jpg" width="1400">
         </Slide>
         <template #addons>
-          <Navigation />
+          <Navigation/>
           <Pagination />
         </template>
       </Carousel>
@@ -18,17 +20,17 @@
     </div>
 
     <paginationItems :items="states.companies"></paginationItems>
-    
+
 </template>
 
 
 <script lang="ts">
 import { defineComponent, reactive } from 'vue'
 import paginationItems from '../components/pagination-items.vue'
-import Job from '@/models/Job'
 import Company from '@/models/Company'
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   components: {
@@ -39,6 +41,9 @@ export default defineComponent({
     Navigation,
   },
   setup() {
+
+    const router = useRouter();
+
     const states = reactive<{ companies: Company[] }>({
       companies: [
         { id: 1, name: "Company1", company_description:"", profile_image:"", background_image:"", vdo:"" },
@@ -69,7 +74,16 @@ export default defineComponent({
       states.companies.splice(index, 1);
     };
 
-    return { states, deleteCompany }
+    const viewProgram = () => {
+      router.push("/program")
+    }
+
+    const viewContact = () => {
+      router.push("/contact")
+    }
+
+
+    return { states, deleteCompany, viewProgram, viewContact}
   },
 })
 </script>
@@ -78,10 +92,10 @@ export default defineComponent({
 @import '../assets/styles/homepage.css';
 
 .carousel__item {
-  width: 100%;
   border-radius: 8px;
   display:  block;;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 

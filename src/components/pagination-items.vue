@@ -1,5 +1,5 @@
 <template>
-    <div class="Companys_content p-3">
+    <div class="companys_content p-3" @click="viewConpany()">
         <div class="columns is-multiline">
             <div class="column is-2 ml-6  mt-3" v-for="item, index in states.addBlogsPageList" :key="index">
                 <!-- <button class="button" @click="deleteItem(index)">Del</button> -->
@@ -42,6 +42,7 @@
 import { defineComponent, onMounted, reactive, ref, onUpdated } from 'vue'
 import type { PropType } from 'vue'
 import Company from '@/models/Company';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
     props: {
@@ -56,6 +57,8 @@ export default defineComponent({
     },
     emits: ['deleteItem'],
     setup(props) {
+
+        const router = useRouter();
 
         let presentPage = ref<number>(1);
         let pastPage = ref<number>(1);
@@ -123,8 +126,12 @@ export default defineComponent({
             presentPage.value === 1 ? previousClicked.value = true : previousClicked.value = false;
         }
 
+        const viewConpany = () => {
+      router.push("/company")
+    }
+
         return {
-             nextPageClicked, previousClicked, getNextPage, getPreviousPage, states, presentPage, changePage
+             nextPageClicked, previousClicked, getNextPage, getPreviousPage, states, presentPage, changePage, viewConpany
         }
     }
 
@@ -132,8 +139,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.Companys_content {
+.companys_content {
     background-color: white;
+    cursor: pointer;
 }
 
 .logo {
