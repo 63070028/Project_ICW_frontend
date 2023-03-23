@@ -17,10 +17,10 @@
         <div class="navbar-item">
           <div class="buttons">
             <router-link class="button is-primary" to="/signup">
-              <strong>Sign up</strong>
+              <strong>Sign Up</strong>
             </router-link>
             <router-link class="button is-light" to="/signin">
-              Sign in
+              Sign In
             </router-link>
           </div>
         </div>
@@ -37,8 +37,8 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   color: #2c3e50;
   /* background-color: black;; */
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 html, body, #app {
