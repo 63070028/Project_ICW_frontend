@@ -130,11 +130,6 @@ export default {
                 timer: 1500
             })
             setTimeout(()=>{this.$router.push("/")}, 1500);
-            // const res = await axios.post('http://localhost:3003/signup', data, {
-            //     headers: { "Access-Control-Allow-Origin": "*" }
-            // });
-
-            // console.log(res)
         }
     }
 
