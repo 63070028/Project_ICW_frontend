@@ -1,7 +1,7 @@
 <template>
    
-    <h1 class="is-size-1 has-text-centered mt-6">Sign Up</h1>
-    <div class="signup_content p-6">
+    <h1 class="is-size-1 has-text-centered mt-3">Sign Up</h1>
+    <div class="signup_content p-6 ">
         <div class="columns select-role">
             <button
                 :class="['column', 'button', 'is-dark', 'p-1', 'is-size-4', select_role === 'company' ? 'is-outlined' : '']"
