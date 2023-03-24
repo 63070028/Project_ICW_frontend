@@ -1,9 +1,9 @@
 <template>
-    <div class="companys_content p-3" @click="viewConpany()">
+    <div class="companys_content p-3">
         <div class="columns is-multiline">
             <div class="column is-2 ml-6  mt-3" v-for="item, index in states.addBlogsPageList" :key="index">
                 <!-- <button class="button" @click="deleteItem(index)">Del</button> -->
-                <div class="card">
+                <div class="card" @click="viewConpany(item.id)">
                     <div class="card-content">
                         <div class="card-image">
                             <figure class="image is-4by3">
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 
 
@@ -29,12 +29,12 @@
         <button class="pagination-next" :disabled="nextPageClicked" @click="getNextPage()">Next page</button>
         <ul class="pagination-list">
             <li v-for="index in states.countOfPages" :key="index">
-                <a v-bind:id="'pageId' + (index + 1)" class="pagination-link" @click="changePage(index + 1)">{{ index + 1 }}</a>
+                <a v-bind:id="'pageId' + (index + 1)" class="pagination-link" @click="changePage(index + 1)">{{ index + 1
+                }}</a>
             </li>
 
         </ul>
     </nav>
-
 </template>
 
 
@@ -92,24 +92,24 @@ export default defineComponent({
             pastPage.value = presentPage.value;
             presentPage.value += 1;
             loadMyPaginationList();
-            document.getElementById('pageId'+presentPage.value)?.classList.add('is-current'); 
-            document.getElementById('pageId'+pastPage.value)?.classList.remove('is-current');
+            document.getElementById('pageId' + presentPage.value)?.classList.add('is-current');
+            document.getElementById('pageId' + pastPage.value)?.classList.remove('is-current');
         }
 
         const changePage = (page: number) => {
             pastPage.value = presentPage.value;
             presentPage.value = page;
             loadMyPaginationList();
-            document.getElementById('pageId'+presentPage.value)?.classList.add('is-current'); 
-            document.getElementById('pageId'+pastPage.value)?.classList.remove('is-current');
+            document.getElementById('pageId' + presentPage.value)?.classList.add('is-current');
+            document.getElementById('pageId' + pastPage.value)?.classList.remove('is-current');
         }
 
         const getPreviousPage = () => {
             pastPage.value = presentPage.value;
             presentPage.value -= 1;
             loadMyPaginationList();
-            document.getElementById('pageId'+presentPage.value)?.classList.add('is-current'); 
-            document.getElementById('pageId'+pastPage.value)?.classList.remove('is-current');
+            document.getElementById('pageId' + presentPage.value)?.classList.add('is-current');
+            document.getElementById('pageId' + pastPage.value)?.classList.remove('is-current');
         }
 
 
@@ -126,12 +126,12 @@ export default defineComponent({
             presentPage.value === 1 ? previousClicked.value = true : previousClicked.value = false;
         }
 
-        const viewConpany = () => {
-      router.push("/company")
-    }
+        const viewConpany = (id:number) => {
+            router.push("/companies/"+id)
+        }
 
         return {
-             nextPageClicked, previousClicked, getNextPage, getPreviousPage, states, presentPage, changePage, viewConpany
+            nextPageClicked, previousClicked, getNextPage, getPreviousPage, states, presentPage, changePage, viewConpany
         }
     }
 

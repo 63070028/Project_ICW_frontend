@@ -9,7 +9,7 @@
       <div class="column is-10 ml-3 mr-3 ">
         <Carousel :autoplay="1500" :wrapAround="true" style="width: 90%;">
         <Slide v-for="slide in 10" :key="slide">
-          <img @click="viewProgram()" class="carousel__item" src="https://www.w3schools.com/w3images/workbench.jpg" width="1400">
+          <img @click="viewProgram(slide)" class="carousel__item" src="https://www.w3schools.com/w3images/workbench.jpg" width="1400">
         </Slide>
         <template #addons>
           <Navigation/>
@@ -74,8 +74,8 @@ export default defineComponent({
       states.companies.splice(index, 1);
     };
 
-    const viewProgram = () => {
-      router.push("/program")
+    const viewProgram = (id:number) => {
+      router.push("/programs/"+id)
     }
 
     const viewContact = () => {
