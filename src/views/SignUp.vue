@@ -4,12 +4,12 @@
     <div class="signup_content p-6 ">
         <div class="columns select-role">
             <button
-                :class="['column', 'button', 'is-dark', 'p-1', 'is-size-4', select_role === 'company' ? 'is-outlined' : '']"
+                :class="['column', 'button', 'is-dark', 'p-1', 'is-size-6', select_role === 'company' ? 'is-outlined' : '']"
                 @click="siwtchApplicant()">
                 หางาน
             </button>
             <button
-                :class="['column', 'button', 'is-dark', 'p-1', 'is-size-4', select_role === 'applicant' ? 'is-outlined' : '']"
+                :class="['column', 'button', 'is-dark', 'p-1', 'is-size-6', select_role === 'applicant' ? 'is-outlined' : '']"
                 @click="siwtchCompany()">
                 หาคน
             </button>

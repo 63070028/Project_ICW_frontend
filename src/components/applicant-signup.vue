@@ -1,6 +1,6 @@
 <template>
     <div class="field">
-        <label class="label is-size-4">First Name</label>
+        <label class="label">First Name</label>
         <div class="control">
             <input :class="['input', v$.firstName.$errors.length ? 'is-danger' : '']" type="text"
                 v-model="v$.firstName.$model">
@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="field">
-        <label class="label is-size-4">Last Name</label>
+        <label class="label">Last Name</label>
         <div class="control">
             <input :class="['input', v$.lastName.$errors.length ? 'is-danger' : '']" type="text"
                 v-model="v$.lastName.$model">
@@ -22,7 +22,7 @@
     </div>
 
     <div class="field">
-        <label class="label is-size-4">Email</label>
+        <label class="label">Email</label>
         <div class="control">
             <input :class="['input', v$.email.$errors.length ? 'is-danger' : '']" type="email" v-model="v$.email.$model">
         </div>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="field">
-        <label class="label is-size-4">Password</label>
+        <label class="label">Password</label>
         <div class="control">
             <input :class="['input', v$.password.$errors.length ? 'is-danger' : '']" type="password"
                 v-model="v$.password.$model">
@@ -43,7 +43,7 @@
     </div>
 
     <div class="field">
-        <label class="label is-size-4">Confirm Password</label>
+        <label class="label">Confirm Password</label>
         <div class="control">
             <input :class="['input', v$.confirmPassword.$errors.length ? 'is-danger' : '']" type="password"
                 v-model="v$.confirmPassword.$model">

@@ -1,21 +1,21 @@
 <template>
     <div class="signin_content p-6">
-        <h1 class="is-size-1 has-text-centered mt-3">Sign Up</h1>
+        <h1 class="is-size-1 has-text-centered">Sign Up</h1>
         <div class="field ">
-            <label class="label is-large">Email</label>
+            <label class="label ">Email</label>
             <div class="control">
                 <input :class="['input', v$.email.$errors.length ? 'is-danger' : '']" v-model="v$.email.$model"
-                    class="input is-large" type="text">
+                    class="input " type="text">
             </div>
             <div class="has-text-danger" v-for="error of v$.email.$errors" :key="error.$uid">
                 <div class="error-msg">{{ error.$message }}</div>
             </div>
         </div>
         <div class="field ">
-            <label class="label is-large">Password</label>
+            <label class="label ">Password</label>
             <div class="control">
                 <input :class="['input', v$.password.$errors.length ? 'is-danger' : '']" v-model="v$.password.$model"
-                    class="input is-large" type="password">
+                    class="input " type="password">
             </div>
             <div class="has-text-danger" v-for="error of v$.password.$errors" :key="error.$uid">
                 <div class="error-msg">{{ error.$message }}</div>
@@ -23,7 +23,7 @@
         </div>
         <div class="field">
             <div class="control">
-                <button class="button is-success is-large is-fullwidth" @click="submitSignIn()">Sign In</button>
+                <button class="button is-success  is-fullwidth" @click="submitSignIn()">Sign In</button>
             </div>
         </div>
     </div>
@@ -80,7 +80,7 @@ export default defineComponent({
 <style scoped>
 .signin_content {
     margin: auto;
-    margin-top: 10rem;
+    margin-top: 6rem;
     width: 30%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

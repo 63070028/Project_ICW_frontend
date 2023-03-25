@@ -1,7 +1,7 @@
 <template>
     <div class="companys_content p-3">
         <div class="columns is-multiline">
-            <div class="column is-2 ml-6  mt-3" v-for="item, index in states.addBlogsPageList" :key="index">
+            <div class="column is-2 ml-6" v-for="item, index in states.addBlogsPageList" :key="index">
                 <!-- <button class="button" @click="deleteItem(index)">Del</button> -->
                 <div class="card" @click="viewConpany(item.id)">
                     <div class="card-content">
@@ -12,7 +12,7 @@
                         </div>
                         <div class="card-content">
                             <div class="media-content">
-                                <p class="title has-text-centered is-size-4">{{ item.name }}</p>
+                                <p class="title has-text-centered is-size-6">{{ item.name }}</p>
                             </div>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
 
 
 
-    <nav class="pagination m-6  pl-6 pr-6 is-medium " role="navigation" aria-label="pagination">
+    <nav class="pagination mt-3 pl-6 pr-5" role="navigation" aria-label="pagination">
         <button class="pagination-previous" :disabled="previousClicked" @click="getPreviousPage()">Previous</button>
         <button class="pagination-next" :disabled="nextPageClicked" @click="getNextPage()">Next page</button>
         <ul class="pagination-list">

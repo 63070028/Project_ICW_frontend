@@ -3,6 +3,7 @@ import HomePage from '@/views/HomePage.vue';
 import CompanyPage from '@/views/Applicant/CompanyPage.vue';
 import ProgramPage from '@/views/Applicant/ProgramPage.vue';
 import ContactPage from '@/views/Applicant/ContactPage.vue';
+import ApplicantProfilePage from '@/views/Applicant/ApplicantProfilePage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -45,6 +46,10 @@ const routes: Array<RouteRecordRaw> = [
     path: '/contact',
     component:ContactPage
   },
+  {
+    path: '/applicantProfile',
+    component:ApplicantProfilePage
+  }
 ]
 
 const router = createRouter({

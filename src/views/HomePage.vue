@@ -1,6 +1,6 @@
 <template>
 
-    <div class="columns ml-6 mt-6 pl-3 pr-3">
+    <div class="columns ml-6 mt-5 pl-3 pr-3">
 
       <div class="column has-background-dark is-2 mr-6 has-text-white box" @click="viewContact()" style="cursor: pointer;">
         <p class="is-size-1 has-text-centered">Contact</p>
