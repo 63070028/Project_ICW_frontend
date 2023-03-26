@@ -49,7 +49,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/applicantProfile',
     component:ApplicantProfilePage
-  }
+  },
+  {
+    path: '/List',
+    name: 'List',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ListApplicant.vue')
+  },
+  {
+    path: '/Applicant',
+    name: 'Applicant',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ApplicantDetail.vue')
+  },
 ]
 
 const router = createRouter({

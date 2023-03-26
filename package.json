@@ -19,7 +19,8 @@
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.3",
     "vue3-carousel": "^0.2.13",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
