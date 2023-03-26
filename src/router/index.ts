@@ -3,7 +3,8 @@ import HomePage from '@/views/HomePage.vue';
 import CompanyPage from '@/views/Applicant/CompanyPage.vue';
 import ProgramPage from '@/views/Applicant/ProgramPage.vue';
 import ContactPage from '@/views/Applicant/ContactPage.vue';
-import ApplicantProfilePage from '@/views/Applicant/ApplicantProfilePage.vue'
+import ApplicantProfilePage from '@/views/Applicant/ApplicantProfilePage.vue';
+import JobPage from '@/views/Applicant/JobPage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -41,6 +42,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/companies/:id',
     component:CompanyPage
+  },
+  {
+    path: '/jobs/:id',
+    component:JobPage,
+    props:true
   },
   {
     path: '/contact',
