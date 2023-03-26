@@ -35,15 +35,10 @@
 @import 'bulma/css/bulma.css';
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  color: #2c3e50;
   /* background-color: black;; */
   /* display: flex;
   flex-direction: column; */
 }
 
-html, body, #app {
-  height: 100%;
-  margin: 0;
-}
 
 </style>
