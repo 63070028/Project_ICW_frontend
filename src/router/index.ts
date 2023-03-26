@@ -51,14 +51,14 @@ const routes: Array<RouteRecordRaw> = [
     component:ApplicantProfilePage
   },
   {
-    path: '/List',
+    path: '/ListApplicant',
     name: 'List',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ListApplicant.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Company/ListApplicant.vue')
   },
   {
     path: '/Applicant',
     name: 'Applicant',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ApplicantDetail.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Company/ApplicantDetail.vue')
   },
 ]
 

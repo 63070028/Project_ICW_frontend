@@ -7,8 +7,8 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from "vue";
-import listApplicants from "../components/list-applicants.vue";
-import Applicant from "@/models/Applicant";
+import listApplicants from "@/components/list-applicants.vue";
+import Applicant from "@/models/Applicant"
 
 
 export default defineComponent({
