@@ -46,7 +46,6 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/jobs/:id',
     component:JobPage,
-    props:true
   },
   {
     path: '/contact',
