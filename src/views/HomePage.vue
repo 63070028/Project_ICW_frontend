@@ -81,7 +81,7 @@ export default defineComponent({
     const viewContact = () => {
       router.push("/contact")
     }
-
+//dsddsds
 
     return { states, deleteCompany, viewProgram, viewContact}
   },
