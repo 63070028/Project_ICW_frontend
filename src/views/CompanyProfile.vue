@@ -17,11 +17,14 @@
             <div class="content" style="min-height: 100vh;">
               <!-- About Us tab content -->
               <div v-show="activeTab === 'info'" style="background-color: #fafafa; min-height: 100vh;">
-                <div class="card-content" style="min-height: 100vh;">
-                  <div class="media">
+                <div class="card-content " style="min-height: 100vh;">
+                  <figure class="image is-2x9 company-cover">
+                    <img :src="companyCover" alt="Company Cover Image">
+                  </figure>
+                  <div class="media company-profile">
                     <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                      <figure class="image is-96x96">
+                        <img :src="companyLogo" alt="Company Logo" class="company-logo">
                       </figure>
                     </div>
                     <div class="media-content">
@@ -30,6 +33,7 @@
                       <p>{{ companyDescription }}</p>
                     </div>
                   </div>
+        
                   <div class="content">
                     <button class="button" @click="editProfile">แก้ไขข้อมูลบริษัท</button>
                     <div class="modal" :class="{ 'is-active': editingProfile }">
@@ -41,6 +45,18 @@
                         </header>
                         <section class="modal-card-body">
                           <form>
+                            <div class="field">
+                                <label class="label">โลโก้บริษัท</label>
+                                <div class="control">
+                                  <input class="input" type="text" v-model="companyLogo" placeholder="URL ของโลโก้บริษัท">
+                                </div>
+                              </div>
+                              <div class="field">
+                                <label class="label">รูปหน้าปก</label>
+                                <div class="control">
+                                  <input class="input" type="text" v-model="companyCover" placeholder="URL ของรูปหน้าปก">
+                                </div>
+                              </div>
                             <div class="field">
                               <label class="label">ชื่อบริษัท</label>
                               <div class="control">
@@ -69,9 +85,24 @@
     </div>
   </div>
 </div>
-
 </div>
 </template>
+<style>
+
+
+.company-logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+
+.company-cover {
+  width: 100%;
+  max-height: 5%;
+
+}
+</style>
 <script>
 export default {
   name: 'App',
@@ -81,7 +112,9 @@ export default {
       editingProfile: false,
       companyName: 'Acme Corporation',
       companyUsername: 'acmecorp',
-      companyDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.'
+      companyDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.',
+      companyLogo: 'https://bulma.io/images/placeholders/96x96.png',
+      companyCover: 'https://bulma.io/images/placeholders/1280x960.png'
     }
   },
   methods: {
@@ -95,8 +128,7 @@ export default {
       this.editingProfile = false;
     },
     saveProfile() {
-        this.editingProfile = false;
-
+      this.editingProfile = false;
     }
   }
 }
