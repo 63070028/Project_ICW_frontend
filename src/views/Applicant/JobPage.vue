@@ -1,5 +1,16 @@
 <template>
-    <p class="is-size-1 has-text-centered mt-3">{{job.name}}</p>
+    <div class="has-background-light mt-3 p-6">
+        <p class="is-size-5 p-5">ตำแหน่ง: {{job.name}}</p>
+        <p class="is-size-5 p-5">สถานที่ทำงาน: {{job.location}}</p>
+        <p class="is-size-5 p-5">ค่าตอบแทนรายวัน: {{job.location}}</p>
+        <p class="is-size-5 p-5">รูปแบบการสัมภาษณ์: {{job.interview}}</p>
+        <p class="is-size-5 p-5">จำนวนคำที่รับ: {{job.capacity}}</p>
+    </div>
+    <div class="mt-3 p-6">
+        <p class="p-5 is-size-5 has-text-weight-semibold">รายละเอียดงาน</p>
+        <p class="p-5 is-size-5 has-text-weight-semibold">คุณสมบัติผู้สมัคร</p>
+        <p class="p-5 is-size-5 has-text-weight-semibold">ช่องทางติดต่อ</p>
+    </div>
 </template>
 
 
