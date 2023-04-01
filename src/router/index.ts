@@ -5,7 +5,7 @@ import ProgramPage from '@/views/Applicant/ProgramPage.vue';
 import ContactPage from '@/views/Applicant/ContactPage.vue';
 import ApplicantProfilePage from '@/views/Applicant/ApplicantProfilePage.vue';
 import JobPage from '@/views/Applicant/JobPage.vue';
-
+import Applicant from '@/views/Company/ApplicantDetail.vue';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -62,8 +62,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/Applicant',
-    name: 'Applicant',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Company/ApplicantDetail.vue')
+    component:Applicant
   },
 ]
 

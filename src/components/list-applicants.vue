@@ -106,6 +106,11 @@ export default defineComponent({
             let startBlog = (presentPage.value - 1) * props.itemPerEachPage;
             let endBlog = startBlog + props.itemPerEachPage;
             states.addBlogsPageList = props.items.slice(startBlog, endBlog);
+            validatePageCount();
+        }
+        const validatePageCount = () => {
+            presentPage.value === states.countOfPages.length ? nextPageClicked.value = true : nextPageClicked.value = false;
+            presentPage.value === 1 ? previousClicked.value = true : previousClicked.value = false;
         }
 
 

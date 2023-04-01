@@ -118,7 +118,7 @@ export default {
 name: 'App',
 data() {
   return {
-    activeTab: 'jobs',
+    //activeTab: 'jobs',
     showModal: false,
     modalTitle: '',
     currentJob: {},
